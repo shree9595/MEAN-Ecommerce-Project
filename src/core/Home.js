@@ -11,7 +11,7 @@ export default function Home() {
 
   const LoadAllProduct = () => {
     getProducts().then((data) => {
-      //console.log(data);
+      console.log(data);
 
       if (data.error) {
         setError(data.error);
@@ -26,10 +26,10 @@ export default function Home() {
   }, []);
   return (
     <Base title="Home Page">
-    <center><h1 className="center">All Product</h1></center>
+      <center><h1 className="center">All Product</h1></center>
       <div className="row text-center">
 
-        
+
         <div className="row">
           {product.map((product, index) => {
             return (

@@ -36,7 +36,7 @@ function ManageCategories() {
             return (
               <div key="index" className="row text-center mb-2 ">
                 <div className="col-4">
-                  <h3 className="text-white text-left">{category.name}</h3>
+                  <h3 className=" text-left">{category.name}</h3>
                 </div>
                 <div className="col-4">
                   <Link
@@ -47,7 +47,7 @@ function ManageCategories() {
                   </Link>
                 </div>
                 <div className="col-4">
-                  <button onClick={() => {}} className="btn btn-danger">
+                  <button onClick={() => { }} className="btn btn-danger">
                     Delete
                   </button>
                 </div>

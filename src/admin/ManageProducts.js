@@ -48,7 +48,7 @@ const ManageProducts = () => {
             return (
               <div key={index} className="row text-center mb-2 ">
                 <div className="col-4">
-                  <h3 className="text-white text-left">{product.name}<br></br>
+                  <h3 className=" text-left">{product.name}<br></br>
                   {product._id}</h3>
                 </div>
                 <div className="col-4">
