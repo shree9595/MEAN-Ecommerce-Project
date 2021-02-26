@@ -25,7 +25,7 @@ export default function Home() {
     LoadAllProduct();
   }, []);
   return (
-    <Base title="Home Page">
+    <Base title="Home Page" description="Cover Store">
       <center><h1 className="center">All Product</h1></center>
       <div className="row text-center">
 
@@ -33,7 +33,7 @@ export default function Home() {
         <div className="row">
           {product.map((product, index) => {
             return (
-              <div key={index} className="col-4">
+              <div key={index} className="col-sm-4">
                 <Card product={product} />
               </div>
             );

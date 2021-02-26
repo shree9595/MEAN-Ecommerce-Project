@@ -10,11 +10,11 @@ const AdminDashBoard = () => {
 
   const adminLeftSide = () => {
     return (
-      <div className="card">
-        <h4 className="card-header bg-dark text-white">Admin Navigation</h4>
+      <div className="card fixed" >
+        <h4 className="card-header bg-dark text-white fixed">Admin Navigation</h4>
         <ul className="list-group">
-          <li className="list-group-item">
-            <Link to="/admin/create/category" className="nav-link text-success">
+          <li className="list-group-item fixed">
+            <Link to="/admin/create/category" className="nav-link text-success ">
               Create Categories
             </Link>
           </li>
@@ -69,8 +69,8 @@ const AdminDashBoard = () => {
       className="container bg-success p-4"
     >
       <div className="row">
-        <div className="col-3">{adminLeftSide()}</div>
-        <div className="col-9">{adminRightSide()}</div>
+        <div className="col-6">{adminLeftSide()}</div>
+        <div className="col-6">{adminRightSide()}</div>
       </div>
     </Base>
   );
