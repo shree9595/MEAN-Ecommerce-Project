@@ -1,22 +1,39 @@
 {
   "files": {
-    "main.css": "/static/css/main.aa636fc8.chunk.css",
-    "main.js": "/static/js/main.594de9c1.chunk.js",
-    "main.js.map": "/static/js/main.594de9c1.chunk.js.map",
+    "main.css": "/static/css/main.143d9988.chunk.css",
+    "main.js": "/static/js/main.6827cc0a.chunk.js",
+    "main.js.map": "/static/js/main.6827cc0a.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.3e109188.js",
     "runtime-main.js.map": "/static/js/runtime-main.3e109188.js.map",
-    "static/js/2.0d60eeb5.chunk.js": "/static/js/2.0d60eeb5.chunk.js",
-    "static/js/2.0d60eeb5.chunk.js.map": "/static/js/2.0d60eeb5.chunk.js.map",
+    "static/css/2.7bd5401c.chunk.css": "/static/css/2.7bd5401c.chunk.css",
+    "static/js/2.a11264db.chunk.js": "/static/js/2.a11264db.chunk.js",
+    "static/js/2.a11264db.chunk.js.map": "/static/js/2.a11264db.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.7d1e0c8b14edeb031459b97f88cf3378.js": "/precache-manifest.7d1e0c8b14edeb031459b97f88cf3378.js",
+    "precache-manifest.492f1bf6d9841bc2b1ad18203d78a1fd.js": "/precache-manifest.492f1bf6d9841bc2b1ad18203d78a1fd.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.aa636fc8.chunk.css.map": "/static/css/main.aa636fc8.chunk.css.map",
-    "static/js/2.0d60eeb5.chunk.js.LICENSE.txt": "/static/js/2.0d60eeb5.chunk.js.LICENSE.txt"
+    "static/css/2.7bd5401c.chunk.css.map": "/static/css/2.7bd5401c.chunk.css.map",
+    "static/css/main.143d9988.chunk.css.map": "/static/css/main.143d9988.chunk.css.map",
+    "static/js/2.a11264db.chunk.js.LICENSE.txt": "/static/js/2.a11264db.chunk.js.LICENSE.txt",
+    "static/media/badge-ad.svg": "/static/media/badge-ad.690bc497.svg",
+    "static/media/briefcase.svg": "/static/media/briefcase.989d99d1.svg",
+    "static/media/cart3.svg": "/static/media/cart3.8721668d.svg",
+    "static/media/chevron-left.svg": "/static/media/chevron-left.bdde5e6d.svg",
+    "static/media/chevron-right.svg": "/static/media/chevron-right.cb01ceea.svg",
+    "static/media/credit-card-2-front.svg": "/static/media/credit-card-2-front.3db0a487.svg",
+    "static/media/envelope.svg": "/static/media/envelope.43274d32.svg",
+    "static/media/gift.svg": "/static/media/gift.cd2aba3c.svg",
+    "static/media/heart-fill.svg": "/static/media/heart-fill.c2406227.svg",
+    "static/media/receipt.svg": "/static/media/receipt.0bab1d9e.svg",
+    "static/media/star-fill.svg": "/static/media/star-fill.d162db33.svg",
+    "static/media/telephone.svg": "/static/media/telephone.e1ea5495.svg",
+    "static/media/trash.svg": "/static/media/trash.caa5ed5c.svg",
+    "static/media/truck.svg": "/static/media/truck.b9a9b606.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.3e109188.js",
-    "static/js/2.0d60eeb5.chunk.js",
-    "static/css/main.aa636fc8.chunk.css",
-    "static/js/main.594de9c1.chunk.js"
+    "static/css/2.7bd5401c.chunk.css",
+    "static/js/2.a11264db.chunk.js",
+    "static/css/main.143d9988.chunk.css",
+    "static/js/main.6827cc0a.chunk.js"
   ]
 }

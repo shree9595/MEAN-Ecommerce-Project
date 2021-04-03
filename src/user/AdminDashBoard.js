@@ -4,9 +4,11 @@ import { isAutheticated } from "../auth/helper/index";
 import { Link } from "react-router-dom";
 
 const AdminDashBoard = () => {
-  const {
-    user: { name, email, role }
-  } = isAutheticated();
+  // const {
+  //   user: { name, email, role }
+  // } = isAutheticated();
+
+  const { user } = isAutheticated()
 
   const adminLeftSide = () => {
     return (
@@ -49,10 +51,10 @@ const AdminDashBoard = () => {
         <h4 className="card-header">Admin Information</h4>
         <ul className="list-group">
           <li className="list-group-item">
-            <span className="badge badge-success mr-2">Name:</span> {name}
+            <span className="badge badge-success mr-2">Name:</span> {user.name}
           </li>
           <li className="list-group-item">
-            <span className="badge badge-success mr-2">Email:</span> {email}
+            <span className="badge badge-success mr-2">Email:</span> {user.email}
           </li>
 
           <li className="list-group-item">

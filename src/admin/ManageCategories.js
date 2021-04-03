@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Base from "../core/Base";
 import { Link } from "react-router-dom";
-import { getCategories } from "./helper/adminapicall";
+import { getCategories, deleteCate } from "./helper/adminapicall";
 import { isAutheticated } from "../auth/helper";
+
 
 function ManageCategories() {
   const [categories, setCategories] = useState([]);
@@ -21,6 +22,20 @@ function ManageCategories() {
   useEffect(() => {
     preload();
   }, []);
+
+  const deleteCategory = (categoryId) => {
+    deleteCate(categoryId, user._id, token).then(
+      data => {
+        if (data.error) {
+          console.log("delete error");
+        }
+        else {
+          preload();
+          console.log("delete successfully");
+        }
+      }
+    )
+  }
 
   return (
     <Base title="Welcome admin" description="Manage products here">
@@ -41,13 +56,13 @@ function ManageCategories() {
                 <div className="col-4">
                   <Link
                     className="btn btn-success"
-                    to={`/admin/product/update/productId`}
+                    to={`/admin/category/update/${category._id}`}
                   >
                     <span className="">Update</span>
                   </Link>
                 </div>
                 <div className="col-4">
-                  <button onClick={() => { }} className="btn btn-danger">
+                  <button onClick={() => { deleteCategory(category._id) }} className="btn btn-danger">
                     Delete
                   </button>
                 </div>

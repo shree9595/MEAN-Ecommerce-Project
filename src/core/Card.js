@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+
+import { Link, Redirect } from "react-router-dom";
 
 import { addItemToCart, removeItemFromCart } from "./helper/cartHelper";
 import ImageHelper from "./helper/ImageHelper";
@@ -34,6 +35,7 @@ const Card = ({
     return (
       addCart && (
         <div className="col-12">
+
           <button
             type="button"
             onClick={AddToCart}
@@ -70,11 +72,11 @@ const Card = ({
       <div className="card-body">
         {getRedirect(redirect)}
         <div className="rounded   p-2">
-          <ImageHelper product={product}  />
+          <ImageHelper product={product} />
         </div>
-        <p className="lead font-weight-normal text-wrap mt-2">
+        {/* <p className="lead font-weight-normal text-wrap mt-2">
           {cardDescription}
-        </p>
+        </p> */}
         <p className=" rounded font-weight-bold btn-sm px-4"> ${cardPrice}</p>
         <div className="row">
           {showAddToCart(addCart)}

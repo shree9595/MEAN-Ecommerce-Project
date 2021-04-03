@@ -3,12 +3,12 @@ import Base from "../core/Base";
 import { Link } from "react-router-dom";
 import {
   getCategories,
-  createaProduct,
   getProduct,
+  updateProduct
 } from "./helper/adminapicall";
 import { isAutheticated } from "../auth/helper/index";
 
-const UpdateThisProduct = ({ match }) => {
+const UpdateProduct = ({ match }) => {
   const { user, token } = isAutheticated();
 
   const [values, setValues] = useState({
@@ -23,7 +23,7 @@ const UpdateThisProduct = ({ match }) => {
     error: "",
     createdProduct: "",
     getaRedirect: false,
-    formData: "",
+    formData: ""
   });
 
   const {
@@ -37,24 +37,37 @@ const UpdateThisProduct = ({ match }) => {
     error,
     createdProduct,
     getaRedirect,
-    formData,
+    formData
   } = values;
 
-  const preload = (productId) => {
-    getProduct(productId).then((data) => {
-      console.log(data);
+  const preload = productId => {
+    getProduct(productId).then(data => {
+      //console.log(data);
       if (data.error) {
         setValues({ ...values, error: data.error });
       } else {
+        preloadCategories();
         setValues({
           ...values,
           name: data.name,
           description: data.description,
           price: data.price,
+          category: data.category._id,
           stock: data.stock,
-          categories: data.categories,
+          formData: new FormData()
+        });
+      }
+    });
+  };
 
-          formData: new FormData(),
+  const preloadCategories = () => {
+    getCategories().then(data => {
+      if (data.error) {
+        setValues({ ...values, error: data.error });
+      } else {
+        setValues({
+          categories: data,
+          formData: new FormData()
         });
       }
     });
@@ -64,30 +77,32 @@ const UpdateThisProduct = ({ match }) => {
     preload(match.params.productId);
   }, []);
 
- 
-
-  const onSubmit = (event) => {
+  //TODO: work on it
+  const onSubmit = event => {
     event.preventDefault();
     setValues({ ...values, error: "", loading: true });
-    getProduct(user._id, token, formData).then((data) => {
-      if (data.error) {
-        setValues({ ...values, error: data.error });
-      } else {
-        setValues({
-          ...values,
-          name: "",
-          description: "",
-          price: "",
-          photo: "",
-          stock: "",
-          loading: false,
-          createdProduct: data.name,
-        });
+
+    updateProduct(match.params.productId, user._id, token, formData).then(
+      data => {
+        if (data.error) {
+          setValues({ ...values, error: data.error });
+        } else {
+          setValues({
+            ...values,
+            name: "",
+            description: "",
+            price: "",
+            photo: "",
+            stock: "",
+            loading: false,
+            createdProduct: data.name
+          });
+        }
       }
-    });
+    );
   };
 
-  const handleChange = (name) => (event) => {
+  const handleChange = name => event => {
     const value = name === "photo" ? event.target.files[0] : event.target.value;
     formData.set(name, value);
     setValues({ ...values, [name]: value });
@@ -98,7 +113,7 @@ const UpdateThisProduct = ({ match }) => {
       className="alert alert-success mt-3"
       style={{ display: createdProduct ? "" : "none" }}
     >
-      <h4>{createdProduct} created successfully</h4>
+      <h4>{createdProduct} updated successfully</h4>
     </div>
   );
 
@@ -173,7 +188,7 @@ const UpdateThisProduct = ({ match }) => {
         onClick={onSubmit}
         className="btn btn-outline-success mb-3"
       >
-        Create Product
+        Update Product
       </button>
     </form>
   );
@@ -197,4 +212,4 @@ const UpdateThisProduct = ({ match }) => {
   );
 };
 
-export default UpdateThisProduct;
+export default UpdateProduct;

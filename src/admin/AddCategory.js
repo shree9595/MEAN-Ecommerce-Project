@@ -4,6 +4,8 @@ import { isAutheticated } from "../auth/helper";
 import { Link } from "react-router-dom";
 import { createCategory } from "./helper/adminapicall";
 
+
+
 const AddCategory = () => {
   const [name, setName] = useState("");
   const [error, setError] = useState(false);
