@@ -30,13 +30,13 @@ import 'firebase/firebase-firestore'
 
 
 const config = {
-  apiKey: "AIzaSyDsMJxks1uyxpuaPRaSqCnIZbPjg7Il-y8",
-  authDomain: "ecom-9d967.firebaseapp.com",
-  projectId: "ecom-9d967",
-  storageBucket: "ecom-9d967.appspot.com",
-  messagingSenderId: "579061874646",
-  appId: "1:579061874646:web:5d780045b7d5e0e7ecee77",
-  measurementId: "G-Z2E13YJLCQ"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_M_S_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MESUR_ID
 }
 
 var provider = new app.auth.GoogleAuthProvider();
@@ -46,6 +46,7 @@ var faceBook = new app.auth.FacebookAuthProvider();
 
 
 class Firebase {
+
   constructor() {
     app.initializeApp(config)
     this.auth = app.auth()
@@ -103,6 +104,8 @@ class Firebase {
   }
 
   googleLogin() {
+
+
 
     return this.auth.signInWithPopup(provider)
 

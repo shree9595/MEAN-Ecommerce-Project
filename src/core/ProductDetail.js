@@ -18,13 +18,6 @@ import Base from "./Base";
 import Carousel from 'react-bootstrap/Carousel'
 import { API } from "../Backend";
 
-
-
-
-
-
-
-
 function ProductDetail({ match }) {
 
     const [redirect, setRedirect] = useState(false);
@@ -151,6 +144,7 @@ function ProductDetail({ match }) {
                                             42 ratings and 4 reviews
                     </span>
                                     </div>
+
                                     {/* <dl className="row small mb-3">
                                         <dt className="col-sm-3">Availability</dt>
                                         <dd className="col-sm-9">In stock</dd>
@@ -323,20 +317,28 @@ function ProductDetail({ match }) {
                     </div>
                 </div>
 
-            </div >
+            </div>
         );
     };
 
+    if (products == '') {
+        return (
+            <Base title="Product Details" description="">
+                <div className="loader text-center"></div>
+            </Base>
+        )
+    }
+    else {
+        return (
+            <Base title="Product Details" description="">
+                {getRedirect(redirect)}
+                <div >{loadAllProducts()}</div>
 
-    return (
-        <Base title="Product Details" description="">
-            {getRedirect(redirect)}
-            <div >{loadAllProducts()}</div>
 
 
-
-        </Base>
-    );
+            </Base>
+        );
+    }
 }
 
 export default ProductDetail

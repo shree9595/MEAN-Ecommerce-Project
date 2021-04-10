@@ -90,7 +90,7 @@ const CartView = () => {
                       <tbody>
                         {products && products.map((product, index) => (
 
-                          <tr>
+                          <tr key={index}>
                             <td>
                               <div className="row">
                                 <div className="col-3 d-none d-md-block">
@@ -140,9 +140,9 @@ const CartView = () => {
 
                             <td>
                               <var className="price">₹{product.price}</var>
-                              <small className="d-block text-muted">
+                              {/* <small className="d-block text-muted">
                               ₹79.00 each
-                          </small>
+                          </small> */}
                             </td>
                             <td className="text-right">
                               <button className="btn btn-sm btn-outline-secondary mr-2">
@@ -181,7 +181,7 @@ const CartView = () => {
               <div className="col-md-3">
 
                 <div className="card mb-3">
-                 
+
                   <div className="card-body">
                     <PaymentCheckout products={products}
                       setReload={setReload}

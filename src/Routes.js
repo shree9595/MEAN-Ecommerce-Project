@@ -23,6 +23,9 @@ import Profile from "./userDashboard/Profile";
 import MyALLOrders from "./admin/Orders";
 import CartView from "./cart/Cart";
 import CheckoutView from "./cart/Checkout";
+import MyPaymentCard from "./userDashboard/MyPaymentCard";
+
+
 
 
 
@@ -53,6 +56,11 @@ function Routes() {
             path="/user/dashboard/address"
             exact
             component={Address}
+          />
+          <PrivateRoute
+            path="/user/dashboard/MyPaymentCard"
+            exact
+            component={MyPaymentCard}
           />
           <PrivateRoute
             path="/user/dashboard/profile"

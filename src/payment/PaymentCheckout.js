@@ -7,7 +7,8 @@ import { API } from '../Backend';
 import PaymentSuccess from './PaymentSuccess';
 import { createOrder } from '../core/helper/createOrder';
 
-import LoginForm from "../core/AddressForm"
+import LoginForm from "../address/AddressForm"
+import UpdateAddressForm from "../address/UpdateAddressForm"
 
 
 
@@ -64,14 +65,14 @@ function PaymentCheckout({ products,
                         {address.map((address, index) => {
                             //console.log("nokia", product.products[0].name);
                             return (
-                                <div>
+                                <div key={index}>
                                     <h5 className='text-center'>{address.fullname}       {address.contact}</h5>
                                     <p className="text-dark text-center">{address.address} {address.pin} {address.city} {address.state}</p>
                                 </div>)
                         })}
                     </div>
                     <br></br>
-                    <LoginForm
+                    <UpdateAddressForm
                         setReload={setReload}
                         reload={reload}
                     />
@@ -118,7 +119,8 @@ function PaymentCheckout({ products,
                     </dl>
                     <hr />
                     <p className="text-center">
-                        {showPaytmButton()}
+                        {address && showPaytmButton()}
+
                     </p>
                 </div>
             </div>
@@ -187,7 +189,7 @@ function PaymentCheckout({ products,
         console.log("result", amount);
 
         const options = {
-            key: "rzp_live_cfyLEKg4prXOOE", // Enter the Key ID generated from the Dashboard
+            key: process.env.REACT_APP_KEY_ID, // Enter the Key ID generated from the Dashboard
             amount: amount,
             currency: currency,
             name: user.name,

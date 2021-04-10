@@ -9,7 +9,7 @@ import firebase from '../firebase'
 import { createOrder } from "./helper/createOrder";
 import { isAutheticated } from "../auth/helper";
 
-import LoginForm from "./AddressForm";
+import LoginForm from "../address/AddressForm";
 
 
 const Cart = () => {

@@ -60,7 +60,7 @@ const CardProductGrid = ({ product, addCart = true,
     return (
         <div className="card">
             {getRedirect(redirect)}
-            
+
             <Link
                 className="btn "
                 to={`productDetail/${product._id}`}
@@ -90,7 +90,7 @@ const CardProductGrid = ({ product, addCart = true,
             )}
             <div className="card-body">
                 <h6 className="card-subtitle mb-2">
-                    <Link to={product.link} className="text-decoration-none">
+                    <Link to={`productDetail/${product._id}`} className="text-decoration-none">
 
                         {product.name}
                     </Link>

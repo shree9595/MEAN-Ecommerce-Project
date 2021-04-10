@@ -27,7 +27,7 @@ function UserDashBoard() {
             </Link>
           </li>
           <li className="list-group-item fixed">
-            <Link to="/admin/create/category" className="nav-link text-success ">
+            <Link to="/user/dashboard/MyPaymentCard" className="nav-link text-success ">
               My Card
             </Link>
           </li>

@@ -159,7 +159,7 @@ const AddProduct = () => {
       <button
         type="submit"
         onClick={onSubmit}
-        className="btn btn-outline-success mb-3"
+        className="btn btn-success mb-3"
       >
         Create Product
       </button>
