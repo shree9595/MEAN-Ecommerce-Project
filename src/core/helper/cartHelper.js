@@ -27,11 +27,32 @@ export const addAddressToCart = (item, next) => {
     // next();
   }
 };
+export const addWishListToCart = (item, next) => {
+  let Wishlist = [];
+  if (typeof window !== undefined) {
+    if (localStorage.getItem("Wishlist")) {
+      Wishlist = JSON.parse(localStorage.getItem("Wishlist"));
+    }
+    Wishlist.push({
+      ...item,
+      count: 1
+    });
+    localStorage.setItem("Wishlist", JSON.stringify(Wishlist));
+    // next();
+  }
+};
 
 export const loadCart = () => {
   if (typeof window !== undefined) {
     if (localStorage.getItem("cart")) {
       return JSON.parse(localStorage.getItem("cart"));
+    }
+  }
+};
+export const loadWishlist = () => {
+  if (typeof window !== undefined) {
+    if (localStorage.getItem("Wishlist")) {
+      return JSON.parse(localStorage.getItem("Wishlist"));
     }
   }
 };
@@ -43,6 +64,7 @@ export const loadAddress = () => {
     }
   }
 };
+
 export const EmptyAddress = next => {
   if (typeof window !== undefined) {
     localStorage.removeItem("address");

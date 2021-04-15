@@ -24,6 +24,7 @@ import MyALLOrders from "./admin/Orders";
 import CartView from "./cart/Cart";
 import CheckoutView from "./cart/Checkout";
 import MyPaymentCard from "./userDashboard/MyPaymentCard";
+import Navbar from "./drawer/NewMenu";
 
 
 
@@ -33,6 +34,7 @@ function Routes() {
   return (
     <div>
       <BrowserRouter>
+        
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/signup" exact component={Signup} />

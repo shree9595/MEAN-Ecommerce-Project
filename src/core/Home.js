@@ -12,11 +12,28 @@ import CardProductGrid from "./NewCard";
 import CardIcon from '../card/CardIcon'
 import { data } from '../data'
 import Banner from "../carousel/Banner";
+import Navbar from "../drawer/NewMenu";
+import SwipeMenu from "../drawer/NewMenu";
+
+import {
+  withStyles,
+  AppBar,
+  Toolbar,
+  Typography,
+  IconButton,
+  Slide
+} from "@material-ui/core/";
+
+
+
+import { Menu, Search } from "@material-ui/icons/";
+
 
 
 export default function Home() {
   const [product, setProduct] = useState([]);
   const [error, setError] = useState(false);
+  
 
   const LoadAllProduct = () => {
     getProducts().then((data) => {
@@ -29,6 +46,10 @@ export default function Home() {
       }
     });
   };
+
+  useEffect(() => {
+   
+  }, [])
 
   // const iconProducts = data.iconProducts;
   // const rows = [...Array(Math.ceil(iconProducts.length / 4))];
@@ -101,7 +122,10 @@ export default function Home() {
           {/* <Carousel id="elect-product-category" className="mb-3">
         {carouselContent}
       </Carousel> */}
+         
+
           <Base title="Home Page" description="Cover Store">
+
             <ImageSider className="mb-3" />
 
             <center><h1 className="center">All Product</h1></center>

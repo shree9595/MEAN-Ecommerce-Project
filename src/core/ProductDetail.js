@@ -9,7 +9,7 @@ import {
     faMinus,
     faPlus,
 } from "@fortawesome/free-solid-svg-icons";
-import { addItemToCart, loadCart } from "./helper/cartHelper";
+import { addItemToCart, addWishListToCart, loadCart, loadWishlist } from "./helper/cartHelper";
 import { oneProducts, getProducts } from "./helper/coreapicalls";
 
 import ImageHelper from "./helper/ImageHelper";
@@ -22,13 +22,35 @@ function ProductDetail({ match }) {
 
     const [redirect, setRedirect] = useState(false);
     const [products, setProducts] = useState([]);
+    const [wishlist, setWishlist] = useState([]);
     const [reload, setReload] = useState(false);
+
+
+
+    // let obj = wishlist.find(o => o._id == '6038b420e83a330004ea361d');
+
+    // console.log("wishlist", obj);
 
 
     const AddToCart = () => {
         addItemToCart(products, () => {
             setRedirect(true);
         });
+    };
+
+    const AddToWishlist = () => {
+        // if (wishlist) {
+        //     let obj = wishlist.find((o, i) => {
+        //         if (o._id != products._id) {
+        //             addWishListToCart(products)
+        //             return true;
+        //         }
+        //     })
+        // } else {
+        //     addWishListToCart(products)
+        // }
+        addWishListToCart(products)
+
     };
 
     const getRedirect = (redirect) => {
@@ -46,8 +68,9 @@ function ProductDetail({ match }) {
     };
 
     useEffect(() => {
+        setWishlist(loadWishlist)
         oneProducts(match.params.productId).then((data) => {
-            console.log(data);
+            // console.log(data);
 
             if (data.error) {
                 console.log(data.error);
@@ -291,6 +314,7 @@ function ProductDetail({ match }) {
                                             type="button"
                                             className="btn btn-sm btn-outline-secondary"
                                             title="Add to wishlist"
+                                            onClick={AddToWishlist}
                                         >
                                             <FontAwesomeIcon icon={faHeart} />
                                         </button>
